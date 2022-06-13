@@ -6,12 +6,15 @@ import WithAuth from './containers/login/withauth'
 import PrivateRoute from './containers/routes/privateroute'
 import PublicRoute from './containers/routes/publicroute'
 import routes from './routes'
+import { isSuperAdmin } from './components/common/super_admin'
 
 function App (props) {
+  const superAdmin = isSuperAdmin(props.currentUser)
+  console.log('superAdmin', superAdmin, props)
   return (
     <Container maxWidth='sm'>
       <Router>
-        <Navigation currentUser={props.currentUser} />
+        <Navigation currentUser={props.currentUser} superAdmin={superAdmin} />
 
         <Routes>
           {routes.filter(route => route.component)

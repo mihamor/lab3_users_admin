@@ -44,8 +44,9 @@ class User {
 
   // Update a user's information by email or UID
   async updateuser (params) {
-    const fields = ['email', 'displayName', 'disabled', 'emailVerified']
-    const { uid, account_level } = params
+    const { uid, account_level, password} = params
+    const fields = ['email', 'displayName', 'disabled', 'emailVerified', ...(password ? ['password'] : [])]
+    console.log(password);
     const info = {}
     let user
 

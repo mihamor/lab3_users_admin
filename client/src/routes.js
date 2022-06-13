@@ -7,25 +7,30 @@ import Home from './components/home'
 const routes = [
   {
     path: '/login',
+    name: 'Login',
     isProtected: false,
     component: LoginContainer
   },
   {
+    name: 'Dashboard',
     path: '/dashboard',
     isProtected: true,
     component: DashboardContainer
   },
   {
+    name: 'Create User',
     path: '/create',
     isProtected: true,
     component: CreateUserContainer
   },
   {
+    name: 'Edit User',
     path: '/edit',
-    isProtected: true,
+    isProtected: false,
     component: UpdateUserContainer
   },
   {
+    name: 'Home',
     path: '/',
     isProtected: false,
     component: Home

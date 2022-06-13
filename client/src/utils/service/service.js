@@ -65,7 +65,7 @@ export default class Service {
   }
 
   async updateUser (info) {
-    const fields = ['uid', 'email', 'displayname', 'disabled', 'emailverified', 'account_level']
+    const fields = ['uid', 'email', 'displayname', 'disabled', 'emailverified', 'account_level', 'password']
     const body = {}
 
     fields.forEach((item) => {

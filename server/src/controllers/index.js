@@ -97,7 +97,7 @@ router.post('/user', validFirebaseToken, isSuperAdmin, createUser)
  *
  * const res = await axios({ ...obj, url: 'http://localhost:3001/api/user', method: 'PATCH' })
  */
-router.patch('/user', validFirebaseToken, isSuperAdmin, isProtected, updateUser)
+router.patch('/user', validFirebaseToken, isProtected, updateUser)
 
 /**
  * @api {delete} /user/:uid Delete UserRecord

@@ -51,6 +51,16 @@ function UserForm (props) {
         onChange={onTextChange}
       />
 
+      <TextField
+        id='password'
+        label='Enter new password'
+        variant='outlined'
+        size='small'
+        disabled={loadstatus.isLoading}
+        value={state.password}
+        onChange={onTextChange}
+      />
+
       <InputLabel sx={styles.formlabel} id='accountlevel-label'>Account Type</InputLabel>
       <Select
         labelId='accountlevel-label'
@@ -60,6 +70,7 @@ function UserForm (props) {
         value={state.account_level}
         onChange={onTextChange}
       >
+        <MenuItem value={-1} size='small'>Default user</MenuItem>
         <MenuItem value={1} size='small'>Superadmin</MenuItem>
         <MenuItem value={2} size='small'>Admin</MenuItem>
       </Select>

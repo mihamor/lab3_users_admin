@@ -8,7 +8,7 @@ function PublicRoute ({ Component, idx, path, ...props }) {
     if (['/login'].includes(path)) {
       return <Navigate key={idx}
         to={{
-          pathname: '/dashboard',
+          pathname: '/',
           state: { from: props.location }
         }} />
     }

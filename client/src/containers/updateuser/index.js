@@ -4,7 +4,7 @@ import { updateUser } from '../../utils/service'
 import UserForm from '../../components/common/userform'
 
 const defaultState = {
-  email: '', displayname: '', account_level: '1', disabled: false, emailverified: false
+  email: '', displayname: '', account_level: '1', disabled: false, emailverified: false, password: ''
 }
 
 const defaultLoadingState = {
@@ -13,6 +13,7 @@ const defaultLoadingState = {
 
 function UpdateUserContainer () {
   const location = useLocation()
+  console.log(location.state)
   const [state, setState] = useState(location?.state || defaultState)
   const [loading, setLoading] = useState(defaultLoadingState)
 

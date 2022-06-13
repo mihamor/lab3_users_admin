@@ -9,6 +9,7 @@ const {
 module.exports.createUser = async (req, res, next) => {
   const { email, displayname, account_level, emailverified, disabled } = req.body
   if (!email || !displayname || !account_level) {
+    console.log(email, displayname, account_level)
     return res.status(500).send('Missing parameter/s.')
   }
 
@@ -27,12 +28,15 @@ module.exports.createUser = async (req, res, next) => {
 module.exports.updateUser = async (req, res, next) => {
   const { uid } = req.body
 
+  console.log(req.body);
+
   if (!uid) {
     return res.status(500).send('Missing UID.')
   }
 
   try {
     const user = await updateuser(req.body)
+    console.log('updated', user);
     return res.status(200).json(user)
   } catch (err) {
     next(new Error(err))
